@@ -30,5 +30,9 @@
   "engines": {
     "node": "12.16.0",
     "npm": "6.5.0"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/stevenwinter-dev/g5gaming"
   }
 }
