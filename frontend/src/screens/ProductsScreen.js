@@ -164,7 +164,7 @@ function ProductsScreen (props) {
                         value={category}  
                         id='category' 
                         onChange={(e) => setCategory(e.target.value)}>
-                        <option value='Nintendo64' selected="selected">Nintendo64</option>
+                        <option value='Nintendo64' selected>Nintendo64</option>
                         <option value='Playstation'>Playstation</option>
                     </select>
                 </li>
