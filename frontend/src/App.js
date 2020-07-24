@@ -14,6 +14,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrdersScreen from './screens/OrdersScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import CategoryScreen from './screens/CategoryScreen';
 
 
 function App() {
@@ -31,13 +32,13 @@ const closeMenu = () => {
     <div className='grid-container'>
       <header className='header'>
           <div className='brand'>
-              <button onClick={openMenu}>
+              <button onClick={openMenu} className='hide'>
                   &#9776;
               </button>
               <Link to='/'>Gen5 Gaming</Link>
           </div>
           <div className='header-links'>
-              <a href='cart'>Cart</a>
+              <a href='cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
               {
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign In</Link>
@@ -55,18 +56,29 @@ const closeMenu = () => {
               )} 
           </div>
       </header>
+
       <aside className='sidebar'>
-          <h3>Consoles</h3>
+          <h3>Menu</h3>
           <button className='sidebar-close-button' onClick={closeMenu}>x</button>
           <ul className='categories'>
               <li>
-                  <Link to='/category/Nintendo64'>Nintendo 64</Link>
+              {
+                userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
+                <Link to='/signin'>Sign In</Link>
+              }
               </li>
               <li>
-                  <Link to='/category/Playstation'>Playstation</Link>
+                  <Link to='/cart' onClick={closeMenu}>Cart</Link>
+              </li>
+              <li>
+                  <Link to='/category/Nintendo64' onClick={closeMenu}>Nintendo 64</Link>
+              </li>
+              <li>
+                  <Link to='/category/Playstation' onClick={closeMenu}>Playstation</Link>
               </li>
           </ul>
       </aside>
+
       <main className='main'>
           <div className='content'>
           <Route path="/orders" component={OrdersScreen} />
@@ -80,13 +92,34 @@ const closeMenu = () => {
             <Route path="/register" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
-            <Route path="/category/:id" component={HomeScreen} />
+            <Route path="/category/:id" component={CategoryScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
-              
           </div>
       </main>
-      <footer className='footer'>
-          All rights reserved.
+      <footer>
+            <div className='footer'>
+            <div class='footer-container'>
+                <h4>CONTACT INFO</h4>
+                <p>ADDRESS:</p>
+                <p>1234 Main St. Houston, TX</p>
+                <p>EMAIL:</p>
+                <p>stevenwinter.dev@gmail.com</p>
+            </div>
+            <div class='footer-container'>
+                <h4>QUICK LINKS</h4>
+                <p>CONSOLES:</p>
+                <p><Link to='/category/Nintendo64'>Nintendo 64</Link></p>
+                <p><Link to='/category/Playstation'>Nintendo 64</Link></p>
+            </div>
+            <div class='footer-container'>
+                <h4>TOP SELLERS</h4>
+                <p>Mario 64</p>
+                <p>Final Fantasy VII</p>
+                <p>Ocarina of Time</p>
+                <p>GoldenEye 007</p>
+            </div>
+            </div>
+            <div className='copyright'>© Copyright 2020 G5 Gaming. All Rights Reserved.</div>
       </footer>
     </div>
     </BrowserRouter>

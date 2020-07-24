@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import Rating from '../components/Rating';
 
-function HomeScreen (props) {
+function CategoryScreen (props) {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortOrder, setSortOrder] = useState('');
   const category = props.match.params.id ? props.match.params.id : '';
@@ -30,16 +30,7 @@ function HomeScreen (props) {
   }
 
     return <>
-    <div className='hero'>
-      <div className='hero-text'>
-            <h1>Your source for the games that changed everything</h1>
-            <p>Find old favorites or discover new ones</p>
-            <div className='hero-buttons'>
-              <button><Link to='/category/Nintendo64'>Nintendo 64</Link></button>
-              <button><Link to='/category/Playstation'>Playstation</Link></button>
-            </div>
-      </div>
-    </div>
+    <div className='category-container'>
       {category && 
       <h2>{category}</h2>}
       <ul className='filter'>
@@ -53,8 +44,8 @@ function HomeScreen (props) {
           Sort By {' '}
           <select name='sortOrder' onChange={sortHandler}>
             <option value=''>Newest</option>
-            <option value='highest'>Lowest Rated</option>
-            <option value='lowest'>Highest Rated</option>
+            <option value='highest'>Lowest</option>
+            <option value='lowest'>Highest</option>
           </select>
         </li>
       </ul>
@@ -64,7 +55,6 @@ function HomeScreen (props) {
     {
       products.map(product => 
         <li key={product._id}>
-        <Link to={'/product/' + product._id}>
         <div className='product'>
             <Link to={'/product/' + product._id} className='product-image-container'>
                 <img className='product-image' src={product.image} alt={product.name} />
@@ -81,12 +71,12 @@ function HomeScreen (props) {
               />
             </div>
         </div>
-        </Link>
     </li>)
     }
   </ul>
       }
+      </div>
     </>
   }
 
-export default HomeScreen;
+export default CategoryScreen;
