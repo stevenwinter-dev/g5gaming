@@ -319,6 +319,7 @@ a > .rating > span:last-child {
   cursor: pointer;
   border-radius: .5rem;
   color: white;
+  background-color: black;
 }
 
 .button:hover {
@@ -349,10 +350,24 @@ a > .rating > span:last-child {
   flex-wrap: wrap;
   margin: 1rem;
   align-items: flex-start;
+  min-height: 57.9vh;
 }
 
 .cart-list {
   flex: 3 1 60rem;
+}
+
+.cart-selector {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.cart-selector select {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 10rem;
+  padding: 1rem;
 }
 
 .cart-action {
@@ -393,7 +408,12 @@ a > .rating > span:last-child {
 }
 
 .cart-name {
-  flex: 8 1;
+  flex: 4 1;
+  margin-left: 1rem;
+}
+
+.cart-name a {
+  margin-left: 1rem;
 }
 
 .cart-price {

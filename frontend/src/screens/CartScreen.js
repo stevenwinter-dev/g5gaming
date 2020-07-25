@@ -53,7 +53,7 @@ function CartScreen(props) {
                     </Link>
 
                   </div>
-                  <div>
+                  <div className='cart-selector'>
                     Qty:
                   <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
                       {[...Array(item.countInStock).keys()].map(x =>
