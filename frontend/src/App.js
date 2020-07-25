@@ -38,7 +38,7 @@ const closeMenu = () => {
               <Link to='/'>Gen5 Gaming</Link>
           </div>
           <div className='header-links'>
-              <a href='cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            <Link to='/cart'><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link>
               {
                 userInfo ? <Link to='/profile'>{userInfo.name}</Link>:
                 <Link to='/signin'>Sign In</Link>
