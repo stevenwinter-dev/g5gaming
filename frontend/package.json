@@ -1,6 +1,6 @@
 {
   "name": "g5-gaming",
-  "proxy": "http://127.0.0.1:5001",
+  "proxy": "https://g5gaming-production.up.railway.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
