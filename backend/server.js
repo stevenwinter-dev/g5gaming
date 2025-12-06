@@ -8,12 +8,15 @@ import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute';
 import uploadRoute from './routes/uploadRoute';
 
+mongoose.set('strictQuery', true);
+
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-}).catch(error => console.log(error.reason));
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch((error) => console.error('MongoDB connection error:', error));
 
 const app = express();
 app.use(bodyParser.json());
