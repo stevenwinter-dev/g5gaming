@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.709.0",
+    "@aws-sdk/client-s3": "^3.946.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -31,7 +31,7 @@
     "node": "12.16.0",
     "npm": "6.5.0"
   },
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "https://github.com/stevenwinter-dev/g5gaming"
   }
