@@ -101,7 +101,7 @@ const closeMenu = () => {
             <div class='footer-container'>
                 <h4>CONTACT INFO</h4>
                 <p>ADDRESS:</p>
-                <p>1234 Main St. Houston, TX</p>
+                <p>1234 Main St. Boston, MA</p>
                 <p>EMAIL:</p>
                 <p>stevenwinter.dev@gmail.com</p>
             </div>
@@ -119,7 +119,7 @@ const closeMenu = () => {
                 <p>GoldenEye 007</p>
             </div>
             </div>
-            <div className='copyright'>© Copyright 2020 G5 Gaming. All Rights Reserved.</div>
+            <div className='copyright'>© Copyright 2026 G5 Gaming. All Rights Reserved.</div>
       </footer>
     </div>
     </BrowserRouter>
