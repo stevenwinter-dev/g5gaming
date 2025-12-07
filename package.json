@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --watch backend --exec babel-node backend/server.js",
     "build": "babel backend -d dist",
-    "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build"
+    "postinstall": "cd frontend && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
